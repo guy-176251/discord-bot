@@ -1,0 +1,115 @@
+{
+  "Biotic Rifle - Weapon": {
+    "Type": [
+      "Linear projectile (unscoped)",
+      "Single shot hitscan (scoped)"
+    ],
+    "Damage": [
+      "70"
+    ],
+    "Spread angle": [
+      "Pinpoint"
+    ],
+    "Healing": [
+      "75"
+    ],
+    "Move. speed": [
+      "-65% (scoped)"
+    ],
+    "Projectile speed": [
+      "125 meters per second (unscoped)"
+    ],
+    "Rate of fire": [
+      "1 shot every 0.8 seconds",
+      "1.25 shots per second"
+    ],
+    "Ammo": [
+      "14"
+    ],
+    "Reload time": [
+      "1.5 seconds"
+    ],
+    "Casting time": [
+      "0.25 seconds scoping in",
+      "0.16 seconds scoping out"
+    ],
+    "Duration": [
+      "~0.85 second effect"
+    ],
+    "Headshot": [
+      "\u2715"
+    ]
+  },
+  "Sleep Dart - Ability": {
+    "Type": [
+      "Linear Projectile"
+    ],
+    "Damage": [
+      "5"
+    ],
+    "Spread angle": [
+      "Pinpoint"
+    ],
+    "Projectile speed": [
+      "60 meters per second"
+    ],
+    "Duration": [
+      "Up to 6 seconds"
+    ],
+    "Cooldown": [
+      "12 seconds"
+    ],
+    "Headshot": [
+      "\u2715"
+    ]
+  },
+  "Biotic Grenade - Ability": {
+    "Type": [
+      "Arcing Projectile"
+    ],
+    "Damage": [
+      "60"
+    ],
+    "Healing": [
+      "100"
+    ],
+    "Projectile speed": [
+      "30 meters per second"
+    ],
+    "Area of effect": [
+      "4 meters"
+    ],
+    "Duration": [
+      "4 seconds"
+    ],
+    "Cooldown": [
+      "10 seconds"
+    ],
+    "Headshot": [
+      "\u2715"
+    ]
+  },
+  "Nano Boost - Ultimate Ability": {
+    "Type": [
+      "Targeted Hitscan"
+    ],
+    "Damage": [
+      "+50% damage buff"
+    ],
+    "Healing": [
+      "250 health"
+    ],
+    "Dmg. reduction": [
+      "50%"
+    ],
+    "Max. range": [
+      "40 meters"
+    ],
+    "Duration": [
+      "8 seconds"
+    ],
+    "Charge required": [
+      "1875 points"
+    ]
+  }
+}

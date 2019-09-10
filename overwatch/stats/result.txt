@@ -1,0 +1,119 @@
+time: 0.74
+soup time: 0.47
+┏━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━┓
+┃        Zarya┃█████████████░░░░░░░┃06:09:39┃68% WR┃
+┣━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━╋━━━━━━┫
+┃Wrecking Ball┃████████░░░░░░      ┃04:34:27┃58% WR┃
+┣━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━╋━━━━━━┫
+┃    Reinhardt┃███████░░░░░░       ┃04:04:35┃61% WR┃
+┣━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━╋━━━━━━┫
+┃          Ana┃█████░░░░░░░░       ┃04:01:51┃44% WR┃
+┗━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━┻━━━━━━┛
+┏━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━┓
+┃   Tank┃████████████░░░░░░░░┃37:36:39┃64% WR┃
+┣━━━━━━━╋━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━╋━━━━━━┫
+┃Support┃░                   ┃02:22:09┃51% WR┃
+┣━━━━━━━╋━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━╋━━━━━━┫
+┃ Damage┃                    ┃01:23:07┃ 0% WR┃
+┗━━━━━━━┻━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━┻━━━━━━┛
+[PlayOverwatch](https://playoverwatch.com/en-us/career/pc/Leon-14910) | [Overbuff](https://www.overbuff.com/players/pc/Leon-14910?mode=competitive)
+
+**3523 SR**
+
+205 competitive games played (51.22% won) over 41:21:56
+949
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃Zarya                              ┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┫
+┃      Quick Melee Accuracy┃5%      ┃
+┃           Weapon Accuracy┃36%     ┃
+┃            Damage Blocked┃6256.81 ┃
+┃      Graviton Surge Kills┃4.65    ┃
+┃         High Energy Kills┃15.8    ┃
+┃     Primary Fire Accuracy┃44%     ┃
+┃Projected Barriers Applied┃29.19   ┃
+┃   Secondary Fire Accuracy┃36%     ┃
+┃         Defensive Assists┃8.79    ┃
+┃         Offensive Assists┃4.68    ┃
+┃                All Damage┃13375.36┃
+┃            Barrier Damage┃5188.64 ┃
+┃                    Deaths┃5.82    ┃
+┃              Eliminations┃21.07   ┃
+┃               Final Blows┃6.82    ┃
+┃               Hero Damage┃8004.71 ┃
+┃         Melee Final Blows┃0.11    ┃
+┃           Objective Kills┃8.39    ┃
+┃            Objective Time┃01:16   ┃
+┃                Solo Kills┃0.54    ┃
+┃        Time Spent on Fire┃01:00   ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━┛
+664
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃Wrecking Ball                   ┃
+┣━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┫
+┃   Quick Melee Accuracy┃67%     ┃
+┃        Weapon Accuracy┃37%     ┃
+┃   Players Knocked Back┃68.76   ┃
+┃Secondary Fire Accuracy┃37%     ┃
+┃             All Damage┃10166.08┃
+┃         Barrier Damage┃2431.26 ┃
+┃                 Deaths┃7.0     ┃
+┃           Eliminations┃22.15   ┃
+┃            Final Blows┃8.6     ┃
+┃            Hero Damage┃7411.0  ┃
+┃      Melee Final Blows┃0.87    ┃
+┃        Objective Kills┃10.42   ┃
+┃         Objective Time┃01:29   ┃
+┃             Solo Kills┃1.64    ┃
+┃     Time Spent on Fire┃00:28   ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━┛
+799
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃Reinhardt                            ┃
+┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┫
+┃                Charge Kills┃1.72    ┃
+┃              Damage Blocked┃17186.17┃
+┃          Earthshatter Kills┃2.9     ┃
+┃           Fire Strike Kills┃5.85    ┃
+┃Rocket Hammer Melee Accuracy┃19%     ┃
+┃           Offensive Assists┃2.33    ┃
+┃                  All Damage┃10045.0 ┃
+┃              Barrier Damage┃3140.61 ┃
+┃                      Deaths┃8.05    ┃
+┃                Eliminations┃14.6    ┃
+┃                 Final Blows┃6.21    ┃
+┃                 Hero Damage┃6639.5  ┃
+┃             Objective Kills┃7.16    ┃
+┃              Objective Time┃01:42   ┃
+┃                  Solo Kills┃0.53    ┃
+┃          Time Spent on Fire┃00:28   ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━┛
+951
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃Ana                            ┃
+┣━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┫
+┃   Quick Melee Accuracy┃9%     ┃
+┃        Weapon Accuracy┃21%    ┃
+┃          Enemies Slept┃6.66   ┃
+┃      Healing Amplified┃555.72 ┃
+┃     Nano Boost Assists┃3.8    ┃
+┃    Nano Boosts Applied┃4.26   ┃
+┃        Scoped Accuracy┃64%    ┃
+┃Secondary Fire Accuracy┃21%    ┃
+┃           Self Healing┃603.97 ┃
+┃      Unscoped Accuracy┃55%    ┃
+┃      Defensive Assists┃12.94  ┃
+┃                Healing┃9979.99┃
+┃      Offensive Assists┃10.46  ┃
+┃             All Damage┃3855.32┃
+┃         Barrier Damage┃1161.26┃
+┃                 Deaths┃6.28   ┃
+┃           Eliminations┃11.25  ┃
+┃            Final Blows┃3.06   ┃
+┃            Hero Damage┃2571.51┃
+┃      Melee Final Blows┃0.21   ┃
+┃        Objective Kills┃4.71   ┃
+┃         Objective Time┃01:02  ┃
+┃             Solo Kills┃0.5    ┃
+┃     Time Spent on Fire┃01:37  ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━┛
