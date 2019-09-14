@@ -1,9 +1,11 @@
+import random
 import discord
 import asyncio
 from .bot import Bot
 from const import TOKEN, PREFIX, IF_BOT
 from discord.ext.commands import Context
 from overwatch import the_facts, the_stats
+from textmod import font_df, font_fk, font_ss
 from .scorekeeper import scorekeeper, embed_maker, WIN, LOSE
 
 # initializing the bot
@@ -15,6 +17,35 @@ bot = Bot(prefix = PREFIX,
 @bot.core.event
 async def on_ready():
     print('we in boi')
+
+@bot.cmd(aliases=['ss'])
+async def superscript(ctx, *args):
+    words = ctx.message.content.lower()[len(ctx.invoked_with) + 1:]
+    await ctx.send(''.join((font_ss.get(c, c) for c in words)))
+
+
+@bot.cmd(aliases=['df'])
+async def deepfry(ctx, *args):
+    words = ctx.message.content.upper()[len(ctx.invoked_with) + 1:]
+    await ctx.send(''.join(((random.choice(font_df[c]) if c in font_df else c) for c in words)))
+
+def fuckifier(word):
+    result = ''
+    for c in word:
+        temp = []
+        for n in range(random.randint(1, 4)):
+            thing = random.choice(font_fk)
+            if thing not in temp:
+                temp.append(thing)
+
+        result += ''.join(temp)
+        result += c
+
+    return result
+
+@bot.cmd(aliases=['fk'])
+async def fucked(ctx, *args):
+    await ctx.send(' '.join((fuckifier(a) for a in args)))
 
 @bot.cmd(aliases = ['s'])
 async def stats(ctx: Context, *args):
