@@ -1,9 +1,10 @@
 import json
 import requests
+from pprint import pprint
 from bs4.element import Tag
 from bs4 import BeautifulSoup as Soup, SoupStrainer as Filter
 
-from random_headers import random_headers
+from random_headers import get
 
 class HeroClasses:
     # {hero_name: class}
@@ -26,7 +27,7 @@ class HeroClasses:
     def __load_classes(self) -> None:
         heroes = Soup(
 
-            requests.get('https://playoverwatch.com/en-us/heroes', headers = random_headers()).content,
+            get('https://playoverwatch.com/en-us/heroes'),
             'lxml',
             parse_only = Filter('div', attrs = {'id': 'heroes-selector-container'})
 
@@ -36,5 +37,8 @@ class HeroClasses:
             self.__name(h): self.__class(h)
             for h in heroes
         }
+
+        self.roles = set(self.__classes.values())
+        print(f'\nAll Roles: {", ".join(self.roles)}\n')
 
 hero_classes = HeroClasses()

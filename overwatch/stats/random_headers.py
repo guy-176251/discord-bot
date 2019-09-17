@@ -1,3 +1,4 @@
+import requests
 from random import choice
 
 __desktop_agents = [
@@ -58,3 +59,6 @@ def random_headers():
             'User-Agent': choice(__desktop_agents),
             'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
             }
+
+def get(url):
+    return requests.get(url, headers = random_headers()).content

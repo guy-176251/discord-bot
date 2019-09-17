@@ -1,119 +1,89 @@
-time: 0.74
-soup time: 0.47
-┏━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━┓
-┃        Zarya┃█████████████░░░░░░░┃06:09:39┃68% WR┃
-┣━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━╋━━━━━━┫
-┃Wrecking Ball┃████████░░░░░░      ┃04:34:27┃58% WR┃
-┣━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━╋━━━━━━┫
-┃    Reinhardt┃███████░░░░░░       ┃04:04:35┃61% WR┃
-┣━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━╋━━━━━━┫
-┃          Ana┃█████░░░░░░░░       ┃04:01:51┃44% WR┃
-┗━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━┻━━━━━━┛
-┏━━━━━━━┳━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━┓
-┃   Tank┃████████████░░░░░░░░┃37:36:39┃64% WR┃
-┣━━━━━━━╋━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━╋━━━━━━┫
-┃Support┃░                   ┃02:22:09┃51% WR┃
-┣━━━━━━━╋━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━╋━━━━━━┫
-┃ Damage┃                    ┃01:23:07┃ 0% WR┃
-┗━━━━━━━┻━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━┻━━━━━━┛
-[PlayOverwatch](https://playoverwatch.com/en-us/career/pc/Leon-14910) | [Overbuff](https://www.overbuff.com/players/pc/Leon-14910?mode=competitive)
 
-**3523 SR**
+All Roles: Support, Damage, Tank
 
-205 competitive games played (51.22% won) over 41:21:56
-949
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃Zarya                              ┃
-┣━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┫
-┃      Quick Melee Accuracy┃5%      ┃
-┃           Weapon Accuracy┃36%     ┃
-┃            Damage Blocked┃6256.81 ┃
-┃      Graviton Surge Kills┃4.65    ┃
-┃         High Energy Kills┃15.8    ┃
-┃     Primary Fire Accuracy┃44%     ┃
-┃Projected Barriers Applied┃29.19   ┃
-┃   Secondary Fire Accuracy┃36%     ┃
-┃         Defensive Assists┃8.79    ┃
-┃         Offensive Assists┃4.68    ┃
-┃                All Damage┃13375.36┃
-┃            Barrier Damage┃5188.64 ┃
-┃                    Deaths┃5.82    ┃
-┃              Eliminations┃21.07   ┃
-┃               Final Blows┃6.82    ┃
-┃               Hero Damage┃8004.71 ┃
-┃         Melee Final Blows┃0.11    ┃
-┃           Objective Kills┃8.39    ┃
-┃            Objective Time┃01:16   ┃
-┃                Solo Kills┃0.54    ┃
-┃        Time Spent on Fire┃01:00   ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━┛
-664
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃Wrecking Ball                   ┃
-┣━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┫
-┃   Quick Melee Accuracy┃67%     ┃
-┃        Weapon Accuracy┃37%     ┃
-┃   Players Knocked Back┃68.76   ┃
-┃Secondary Fire Accuracy┃37%     ┃
-┃             All Damage┃10166.08┃
-┃         Barrier Damage┃2431.26 ┃
-┃                 Deaths┃7.0     ┃
-┃           Eliminations┃22.15   ┃
-┃            Final Blows┃8.6     ┃
-┃            Hero Damage┃7411.0  ┃
-┃      Melee Final Blows┃0.87    ┃
-┃        Objective Kills┃10.42   ┃
-┃         Objective Time┃01:29   ┃
-┃             Solo Kills┃1.64    ┃
-┃     Time Spent on Fire┃00:28   ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━┛
-799
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃Reinhardt                            ┃
-┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━┫
-┃                Charge Kills┃1.72    ┃
-┃              Damage Blocked┃17186.17┃
-┃          Earthshatter Kills┃2.9     ┃
-┃           Fire Strike Kills┃5.85    ┃
-┃Rocket Hammer Melee Accuracy┃19%     ┃
-┃           Offensive Assists┃2.33    ┃
-┃                  All Damage┃10045.0 ┃
-┃              Barrier Damage┃3140.61 ┃
-┃                      Deaths┃8.05    ┃
-┃                Eliminations┃14.6    ┃
-┃                 Final Blows┃6.21    ┃
-┃                 Hero Damage┃6639.5  ┃
-┃             Objective Kills┃7.16    ┃
-┃              Objective Time┃01:42   ┃
-┃                  Solo Kills┃0.53    ┃
-┃          Time Spent on Fire┃00:28   ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━┛
-951
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃Ana                            ┃
-┣━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━┫
-┃   Quick Melee Accuracy┃9%     ┃
-┃        Weapon Accuracy┃21%    ┃
-┃          Enemies Slept┃6.66   ┃
-┃      Healing Amplified┃555.72 ┃
-┃     Nano Boost Assists┃3.8    ┃
-┃    Nano Boosts Applied┃4.26   ┃
-┃        Scoped Accuracy┃64%    ┃
-┃Secondary Fire Accuracy┃21%    ┃
-┃           Self Healing┃603.97 ┃
-┃      Unscoped Accuracy┃55%    ┃
-┃      Defensive Assists┃12.94  ┃
-┃                Healing┃9979.99┃
-┃      Offensive Assists┃10.46  ┃
-┃             All Damage┃3855.32┃
-┃         Barrier Damage┃1161.26┃
-┃                 Deaths┃6.28   ┃
-┃           Eliminations┃11.25  ┃
-┃            Final Blows┃3.06   ┃
-┃            Hero Damage┃2571.51┃
-┃      Melee Final Blows┃0.21   ┃
-┃        Objective Kills┃4.71   ┃
-┃         Objective Time┃01:02  ┃
-┃             Solo Kills┃0.5    ┃
-┃     Time Spent on Fire┃01:37  ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━┛
+{ 'Damage': { 'heroes': { 'Bastion': { 'percent_total': 0.08493686964122432,
+                                       'percent_win': 0.0747444452842774,
+                                       'time': '14:09',
+                                       'win': '88%'},
+                          'Doomfist': { 'percent_total': 0.09158364660247943,
+                                        'percent_win': 0.03571762217496698,
+                                        'time': '15:15',
+                                        'win': '39%'},
+                          'Genji': { 'percent_total': 0.028173471937057135,
+                                     'percent_win': 0.0,
+                                     'time': '04:42',
+                                     'win': '0'},
+                          'Junkrat': { 'percent_total': 0.23903703924840258,
+                                       'percent_win': 0.09561481569936103,
+                                       'time': '39:49',
+                                       'win': '40%'},
+                          'McCree': { 'percent_total': 0.042844302812899006,
+                                      'percent_win': 0.00814041753445081,
+                                      'time': '07:08',
+                                      'win': '19%'},
+                          'Mei': { 'percent_total': 0.2308825902666308,
+                                   'percent_win': 0.2262649384612982,
+                                   'time': '38:28',
+                                   'win': '98%'},
+                          'Pharah': { 'percent_total': 0.38077337432947783,
+                                      'percent_win': 0.20942535588121283,
+                                      'time': '01:03:26',
+                                      'win': '55%'},
+                          'Reaper': { 'percent_total': 1.0,
+                                      'percent_win': 0.62,
+                                      'time': '02:46:35',
+                                      'win': '62%'},
+                          'Soldier: 76': { 'percent_total': 0.15077147805686877,
+                                           'percent_win': 0.09347831639525864,
+                                           'time': '25:07',
+                                           'win': '62%'},
+                          'Sombra': { 'percent_total': 0.01683027219796907,
+                                      'percent_win': 0.0,
+                                      'time': '02:48',
+                                      'win': '0'}},
+              'rank': { 'image': 'https://d1u1mce87gyfbn.cloudfront.net/game/rank-icons/rank-PlatinumTier.png',
+                        'sr': 2770}},
+  'Support': { 'heroes': { 'Lúcio': { 'percent_total': 0.5411901253243709,
+                                      'percent_win': 0.2868307664219166,
+                                      'time': '01:30:09',
+                                      'win': '53%'},
+                           'Mercy': { 'percent_total': 0.016233558732533394,
+                                      'percent_win': 0.0,
+                                      'time': '02:42',
+                                      'win': '0'}},
+               'rank': { 'image': 'https://d1u1mce87gyfbn.cloudfront.net/game/rank-icons/rank-MasterTier.png',
+                         'sr': 3515}},
+  'Tank': { 'heroes': { 'D.Va': { 'percent_total': 0.12523259833588707,
+                                  'percent_win': 0.09768142670199191,
+                                  'time': '20:52',
+                                  'win': '78%'},
+                        'Orisa': { 'percent_total': 0.6623140311730212,
+                                   'percent_win': 0.3708958574568919,
+                                   'time': '01:50:20',
+                                   'win': '56%'},
+                        'Reinhardt': { 'percent_total': 0.2035409668404307,
+                                       'percent_win': 0.19132850883000482,
+                                       'time': '33:54',
+                                       'win': '94%'},
+                        'Roadhog': { 'percent_total': 0.026608129231297687,
+                                     'percent_win': 0.0,
+                                     'time': '04:26',
+                                     'win': '0'},
+                        'Sigma': { 'percent_total': 0.7029455995099821,
+                                   'percent_win': 0.1897953118676952,
+                                   'time': '01:57:06',
+                                   'win': '27%'},
+                        'Winston': { 'percent_total': 0.09696704646229512,
+                                     'percent_win': 0.006787693252360659,
+                                     'time': '16:09',
+                                     'win': '7%'},
+                        'Wrecking Ball': { 'percent_total': 0.11937689065647727,
+                                           'percent_win': 0.005968844532823864,
+                                           'time': '19:53',
+                                           'win': '5%'},
+                        'Zarya': { 'percent_total': 0.4099863829366598,
+                                   'percent_win': 0.1885937361508635,
+                                   'time': '01:08:18',
+                                   'win': '46%'}},
+            'rank': { 'image': 'https://d1u1mce87gyfbn.cloudfront.net/game/rank-icons/rank-DiamondTier.png',
+                      'sr': 3301}}}
