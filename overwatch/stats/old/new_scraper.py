@@ -3,11 +3,11 @@ from bs4.element import Tag
 from bs4 import BeautifulSoup as Soup, SoupStrainer as Filter
 
 if __name__ == '__main__':
-    from classes import hero_classes
+    from roles import all_heroes
     from graphs import graph, stats_tables
     from utils import *
 else:
-    from .classes import hero_classes
+    from .roles import all_heroes
     from .graphs import graph, stats_tables
     from .utils import *
 
@@ -26,21 +26,21 @@ def scraper(page: bytes) -> dict:
         for role in soup.find(RANK)
     }
 
-    for role in hero_classes.roles:
+    for role in all_heroes.roles:
         all_roles.setdefault(role, {'rank': {'sr':'__Unranked__','image':''}, 'heroes':{}})
 
     # wins are first in order to calculate win percentage and get time played in one loop
     for hero in comp.find(WIN):
 
         name = hero.find(NAME).text
-        role = hero_classes[name]
+        role = all_heroes[name]
 
         all_roles[role]['heroes'][name] = {'win': hero.find(DESC).text}
 
     for hero in comp.find(TIME):
 
         name = hero.find(NAME).text
-        role = hero_classes[name]
+        role = all_heroes[name]
 
         percent = float(hero['data-overwatch-progress-percent'])
         win = int(all_roles[role]['heroes'][name]['win'].replace('%','')) / 100

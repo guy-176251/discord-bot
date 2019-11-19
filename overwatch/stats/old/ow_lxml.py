@@ -106,7 +106,7 @@ def scraping(page: bytes) -> dict:
         'games won'   : int(games_won[1].text) if games_won else 0,
         'time'        : find(comp, '[data-stat-id="0x0860000000000026"]')[1].text,
         'roles'       : roles,
-        'highest'     : roles[highest_role]['image'] if highest_role else '',
+        'rank'        : roles[highest_role]['image'] if highest_role else '',
         'image'       : profile_pic
     }
 
@@ -172,15 +172,13 @@ def discord_stats(page_or_stats) -> discord.Embed:
         embed.description += f'\n**This competitive info is from a previous season.**\n{blank}'
 
     embed.set_author(name = stats['btag'],
-                     icon_url = stats['highest'],
+                     icon_url = stats['rank'],
                      url = f'https://playoverwatch.com/en-us/career/pc/{stats["btag"].replace("#","-")}')
 
     embed.set_image(url = stats['image'])
 
-    SRs = '\n'.join(f'**{r}**: {stats["roles"][r]["sr"]}' for r in stats['roles'])
-
-    embed.add_field(name = '__All Roles__',
-                    value = f'{SRs}\n```ml\n{graph(stats["roles"])}```\n{blank}')
+    # embed.add_field(name = 'All Roles',
+    #                 value = f'```ml\n{graph(stats["roles"])}```\n{blank}')
 
     sorted_roles = sorted(stats['roles'].keys(),
                           key = lambda r: stats['roles'][r]['time percent'],
@@ -188,15 +186,21 @@ def discord_stats(page_or_stats) -> discord.Embed:
 
     for role in sorted_roles:
         embed.add_field(name = f'__{role}__',
+                        inline = True,
+                        value = '\n'.join([
+                            f"**SR**: {stats['roles'][role]['sr']}",
+                            f"**Time Played**: {stats['roles'][role]['time']}",
+                            f"**Win Rate**: {stats['roles'][role]['win']}",
+                            #f"{blank}"
+                        ]))
+
+    for role in sorted_roles:
+        embed.add_field(name = f'__{role}__',
                         inline = False,
                         value = '\n'.join([
-                            #f"**SR**: {stats['roles'][role]['sr']}",
-                            #f"**Time Played**: {stats['roles'][role]['time']}",
-                            #f"**Win Rate**: {stats['roles'][role]['win']}",
                             f"```ml",
                             f"{graph(stats['roles'][role]['heroes'])}```",
-                            f"{blank}"
-                        ]))
+                            f"{blank}"]))
 
     return embed
 

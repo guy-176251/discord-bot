@@ -1,0 +1,54 @@
+{'Hand Cannon - Weapon': [('Type', 'Shotgun Projectile'),
+                          ('Damage', '1.8 - 6 per pellet\n19.8 - 66 per shot'),
+                          ('Falloff range', '15 meters to 30 meters'),
+                          ('Spread angle', 'Constant: 2.15 degrees'),
+                          ('Projectile speed', '80 meters per second'),
+                          ('Num. of pellets', '11 per shot'),
+                          ('Rate of fire', '1 shot per 0.333 seconds'),
+                          ('Ammo', '4'),
+                          ('Reload time', '0.65 seconds (per shot)'),
+                          ('Headshot', '✓')],
+ 'Meteor Strike - Ultimate': [('Damage', 'Inner ring: 300\nOuter ring: 20-200'),
+                              ('Falloff range', '2-8 meters'),
+                              ('Move. speed', '16.5 meters per second'),
+                              ('Area of effect',
+                               'Inner ring: 2 meters\n'
+                               'Outer ring: 6 meters\n'
+                               'Overall radius: 8 meters'),
+                              ('Casting time', '1 second'),
+                              ('Duration', '4 seconds'),
+                              ('Ultimate cost', '1680 points')],
+ 'Rising Uppercut - Ability': [('Damage', '50'),
+                               ('Move. speed', '10 meters per second'),
+                               ('Area of effect', '5 meters'),
+                               ('Duration', '0.6 seconds (air lock)'),
+                               ('Cooldown', '6 seconds')],
+ 'Rocket Punch - Ability': [('Damage',
+                             '49-100 (depending on charge)\n'
+                             '49-150 (wall impact)'),
+                            ('Move. speed',
+                             '50% while charging\n45 meters per second'),
+                            ('Max. range',
+                             '6.5 to 20 meters (depending on charge)'),
+                            ('Casting time',
+                             '1.4 seconds to fully charge\n'
+                             'Can hold for an additional 0.6 seconds'),
+                            ('Duration', '0.5 second stun'),
+                            ('Cooldown', '4 seconds')],
+ 'Seismic Slam - Ability': [('Damage',
+                             '49-125 (depending on the time spent in air '
+                             'during the slam)'),
+                            ('Move. speed', '25 meters per second (diagonal)'),
+                            ('Max. range', '15 meters (travel distance)'),
+                            ('Area of effect', '8 meters'),
+                            ('Cooldown', '6 seconds')],
+ 'The Best Defense... - Passive Ability': [('Health',
+                                            '+30 temporary shields per enemy '
+                                            'hit with any of the three '
+                                            'abilities\n'
+                                            '+75 shields per enemy hit with '
+                                            'ultimate ability\n'
+                                            'Maximum of 150'),
+                                           ('Duration',
+                                            '1 second delay, -3 shields per '
+                                            'second')]}

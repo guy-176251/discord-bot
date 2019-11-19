@@ -2,6 +2,7 @@ import random
 import discord
 import asyncio
 from .bot import Bot
+from discord.ext import commands
 from const import TOKEN, PREFIX, IF_BOT
 from discord.ext.commands import Context
 from overwatch import the_facts, the_stats
@@ -23,6 +24,22 @@ async def superscript(ctx, *args):
     words = ctx.message.content.lower()[len(ctx.invoked_with) + 1:]
     await ctx.send(''.join((font_ss.get(c, c) for c in words)))
 
+@bot.cmd(aliases = ['s'])
+async def stats(ctx: Context, *args):
+    async with ctx.typing():
+        urls = [f'https://playoverwatch.com/en-us/career/pc/{btag.replace("#","-")}'
+                for btag in list(set(args))[:12]]
+
+        pages = []
+
+        pages.extend(await bot.get_all_pages(urls[:6]))
+        pages.extend(await bot.get_all_pages(urls[6:]))
+
+        embeds = [the_stats(page) for page in pages]
+
+        for em in sorted(embeds, key = lambda e: len(e.fields), reverse=False):
+            await ctx.send(embed = em)
+            await asyncio.sleep(0.5)
 
 @bot.cmd(aliases=['df'])
 async def deepfry(ctx, *args):
@@ -47,23 +64,11 @@ def fuckifier(word):
 async def fucked(ctx, *args):
     await ctx.send(' '.join((fuckifier(a) for a in args)))
 
-@bot.cmd(aliases = ['s'])
-async def stats(ctx: Context, *args):
+@bot.cmd(aliases = ['os'])
+async def old_stats(ctx: Context, *args):
     async with ctx.typing():
-        if len(args) == 0:
-            pass
-
-        if args[0] == 'all':
-            btag   = args[1]
-            per_10 = True
-        else:
-            btag   = args[0]
-            per_10 = False
-
-        resp = await bot.get(f'https://playoverwatch.com/en-us/career/pc/{btag.replace("#", "-")}')
-        page = await resp.text()
-
-        await ctx.send(embed = the_stats(btag, page, per_10))
+        page = await bot.get_page(f'https://playoverwatch.com/en-us/career/pc/{args[0].replace("#", "-")}')
+        await ctx.send(embed = the_stats(args[0], page))
 
 @bot.cmd(aliases = ['f'])
 async def facts(ctx: Context, *args):
@@ -94,9 +99,10 @@ async def score(ctx: Context, *args):
     if 'help' in args:
         await ctx.send(embed=discord.Embed(
             title = '__Usage__',
-            description = (f'`{bot.core.command_prefix}score (user mention) ("win" or "lose")` to update the score\n'
-                           f'`{bot.core.command_prefix}score` to get your record without updating\n'
-                           f'`{bot.core.command_prefix}score (user mention) clear` to clear the record with that user'
+            description = (
+                f'`{bot.core.command_prefix}score (user mention) ("win" or "lose")` to update the score\n'
+                f'`{bot.core.command_prefix}score` to get your record without updating\n'
+                f'`{bot.core.command_prefix}score (user mention) clear` to clear the record with that user'
         )))
         return
 
@@ -127,3 +133,18 @@ async def score(ctx: Context, *args):
     for em in embeds:
         await ctx.send(embed=em)
         await asyncio.sleep(0.5)
+
+is_me = lambda ctx: ctx.message.author.id == 510834536993783818
+
+@bot.cmd(aliases = ['ev'])
+@commands.check(is_me)
+async def evaluate(ctx: Context, *args):
+    cmd = ctx.message.content.replace(f'{bot.core.command_prefix}{ctx.invoked_with} ', '')
+    print('  Evaluating "{cmd}"...')
+    try:
+        result = eval(cmd)
+    except Exception as err:
+        await ctx.send(f'`Error with "{cmd}": "{err}"`')
+        return
+    else:
+        await ctx.send(f'`{result}`')

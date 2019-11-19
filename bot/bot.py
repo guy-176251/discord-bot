@@ -43,8 +43,9 @@ class Bot:
         except KeyboardInterrupt:
             print('\n')
         except Exception as err:
+            from time import asctime
             with open('err.log', '+a') as f:
-                f.write(f'ERROR: {err}\n\n{json.dumps(dict(os.environ), indent = 2)}\n')
+                f.write(f'ERROR: {err}\nDATE: {asctime()}\n\n{json.dumps(dict(os.environ), indent = 2)}\n\n')
         finally:
             self.loop.run_until_complete(self.core.logout())
             self.loop.run_until_complete(self.session.close())
@@ -53,3 +54,14 @@ class Bot:
 
     async def get(self, url: str) -> aiohttp.ClientResponse:
         return await self.session.get(url, headers = random_headers())
+
+    async def get_page(self, url: str) -> str:
+        page = await self.get(url)
+        return await page.text()
+
+    async def get_all(self, urls: list) -> list:
+        return await asyncio.gather(*[self.get(u) for u in urls])
+
+    async def get_all_pages(self, urls: list) -> list:
+        resps = await self.get_all(urls)
+        return await asyncio.gather(*[r.text() for r in resps])
