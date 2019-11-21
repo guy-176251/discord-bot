@@ -1,19 +1,12 @@
 import random
 import discord
 import asyncio
-from .bot import Bot
+from .bot import bot
 from discord.ext import commands
-from const import TOKEN, PREFIX, IF_BOT
 from discord.ext.commands import Context
 from overwatch import the_facts, the_stats
 from textmod import font_df, font_fk, font_ss
 from .scorekeeper import scorekeeper, embed_maker, WIN, LOSE
-
-# initializing the bot
-
-bot = Bot(prefix = PREFIX,
-          token  = TOKEN,
-          if_bot = IF_BOT)
 
 @bot.core.event
 async def on_ready():
@@ -85,13 +78,23 @@ async def facts(ctx: Context, *args):
             )
         elif resp.status == 200:
             page   = await resp.text()
-            embeds = the_facts(args[0], page)
+            search_term = '' if len(args) < 2 else args[1].lower()
+            embeds = the_facts(page, search_term)
+
+            if not embeds:
+                await ctx.send(embed=discord.Embed(title = args[0].title(),
+                                                   description = f'No results found for search term `{args[1]}`.'))
+                return
 
             for e in embeds:
                 try:
                     await ctx.send(embed=e)
                 except Exception as err:
                     print(f'facts error: {err}\n\n{e}')
+
+        else:
+            await ctx.send(embed = discord.Embed(title = 'Network Issues',
+                                                 description = 'Wait a few minutes and try again.'))
 
 @bot.cmd(aliases = ['sc'])
 async def score(ctx: Context, *args):

@@ -5,7 +5,7 @@ import discord
 import aiohttp
 from time import time as Time
 from discord.ext import commands
-
+from const import TOKEN, PREFIX, IF_BOT
 from random_headers import random_headers
 
 class Bot:
@@ -65,3 +65,9 @@ class Bot:
     async def get_all_pages(self, urls: list) -> list:
         resps = await self.get_all(urls)
         return await asyncio.gather(*[r.text() for r in resps])
+
+# initializing the bot
+
+bot = Bot(prefix = PREFIX,
+          token  = TOKEN,
+          if_bot = IF_BOT)
