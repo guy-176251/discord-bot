@@ -9,7 +9,7 @@ except:
     from utils import *
     from roles import all_heroes
 
-def scraping(page: bytes) -> dict:
+def scraper(page: str) -> dict:
     doc  = html.fromstring(page)
 
     url = find(doc, 'link[rel=canonical]').get('href')
@@ -140,7 +140,7 @@ def graph(stats: dict) -> str:
 
 def discord_stats(page_or_stats) -> discord.Embed:
     try:    page_or_stats['found']
-    except: stats = scraping(page_or_stats)
+    except: stats = scraper(page_or_stats)
     else:   stats = page_or_stats
 
     if not stats['found']:
@@ -223,7 +223,7 @@ if __name__ == '__main__':
 
     page = get(f'https://playoverwatch.com/en-us/career/pc/{btag.replace("#","-")}').content
 
-    stats = scraping(page, btag)
+    stats = scraper(page, btag)
 
     with open('ow_scraping_results.json', 'w') as f:
         json.dump(stats, f, indent=2)

@@ -82,5 +82,3 @@ def vim_grid(heroes):
             'Hero|Time|Win Percent|Games Won|Time Percent\n'
             + '\n'.join(f'{h}|' + '|'.join(str(heroes[h][a]) for a in heroes[h]) for h in heroes)
         )
-
-

@@ -1,6 +1,5 @@
 import discord
 from lxml import html
-from pprint import pprint
 
 def find(elem, css):
     return elem.cssselect(css)[0] if elem.cssselect(css) else None
@@ -45,6 +44,7 @@ def the_facts(page: str, search_term: str) -> list:
 
 if __name__ == '__main__':
     import os
+    from pprint import pprint
     from discord import Webhook, RequestsWebhookAdapter
 
     with open('orisa.html', 'r') as IN:
