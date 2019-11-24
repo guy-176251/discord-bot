@@ -20,21 +20,23 @@ def scraper(page: str) -> dict:
 
     profile_pic = find(doc, 'img.player-portrait').get('src')
 
-    if 'private profile' in find(doc, profile).text.lower():
-        return {'found' : True,
-                'public': False,
-                'image' : profile_pic,
-                'btag'  : btag}
+    if 'private profile' in find(doc, 'p.masthead-permission-level-text').text.lower():
+        return {
+            'found' : True,
+            'public': False,
+            'image' : profile_pic,
+            'btag'  : btag
+        }
 
     comp = find(doc, '#competitive')
 
     if not comp:
         return {
-            'found': True,
+            'found' : True,
             'public': True,
-            'comp': False,
-            'btag': btag,
-            'image': profile_pic
+            'comp'  : False,
+            'btag'  : btag,
+            'image' : profile_pic
         }
 
     roles = {role: {'sr':'Unranked','image':'','heroes':{}} for role in all_heroes.roles}
@@ -42,19 +44,22 @@ def scraper(page: str) -> dict:
     rank = find(doc, '.competitive-rank')
 
     if rank:
-        roles.update({role_name(r): {'sr'    : int(find(r, role_sr).text),
-                                     'image' : find(r, image).get('src'),
+        roles.update({role_name(r): {'sr'    : int(find(r, 'div.competitive-rank-level').text),
+                                     'image' : find(r, '.competitive-rank-tier-icon').get('src'),
                                      'heroes': {}}
 
                       for r in rank})
 
-    comp_stats = zip(*[sorted(find(comp, css), key = lambda elem: find(elem, name).text)
-                       for css in (winpercent, timeplayed)])
+    comp_stats = zip(*[sorted(find(comp, css), key = lambda elem: find(elem, bar_name).text)
+                       for css in (
+                           '[data-category-id="0x08600000000003D1"]', # winpercent
+                           '[data-category-id="0x0860000000000021"]', # timeplayed
+                       )])
 
-    heroes = {find(wp, name).text: {'time'        : find(tp, value).text,
-                                    'win'         : f"{find(wp, value).text.strip('%')}%",
-                                    'time percent': float(tp.get(percent)),
-                                    'win percent' : int(find(wp, value).text.replace('%','')) / 100}
+    heroes = {find(wp, bar_name).text: {'time'        : find(tp, bar_value).text,
+                                        'win'         : f"{find(wp, bar_value).text.strip('%')}%",
+                                        'time percent': float(tp.get('data-overwatch-progress-percent')),
+                                        'win percent' : int(find(wp, bar_value).text.replace('%','')) / 100}
 
               for wp, tp in comp_stats}
 
@@ -123,19 +128,19 @@ def graph(stats: dict) -> str:
     cols      = (name_len, bar_len, time_len, win_len)
 
     def bar(cat):
-        bar_num = int(cat['time percent'] * bar_len / max_time)
+        bar_num  = int(cat['time percent'] * bar_len / max_time)
         lose_num = int(bar_num * (1 - cat['win percent']))
-        return (f'{"".join(win for _ in range(bar_num - lose_num))}'
-                f'{"".join(lose for _ in range(lose_num))}')
+        return   (f'{"".join(win for _ in range(bar_num - lose_num))}'
+                  f'{"".join(lose for _ in range(lose_num))}')
 
     return '\n'.join((
-        box_u_d(u, cols),
+        box_edges(U, cols),
         '\n'.join(edge_v.join((f'{edge_v}{cat: <{name_len}}',
                                f'{bar(stats[cat]): <{bar_len}}',
                                f'{stats[cat]["time"]: >{time_len}}',
                                f'{stats[cat]["win"]: >{win_len}}{edge_v}'))
                   for cat in sorted_stats),
-        box_u_d(d, cols)
+        box_edges(D, cols)
     ))
 
 def discord_stats(page_or_stats) -> discord.Embed:
@@ -143,30 +148,27 @@ def discord_stats(page_or_stats) -> discord.Embed:
     except: stats = scraper(page_or_stats)
     else:   stats = page_or_stats
 
+    embed = discord.Embed()
+    embed.set_author(name = stats['btag'],
+                     url = f'https://playoverwatch.com/en-us/career/pc/{stats["btag"].replace("#","-")}')
+
     if not stats['found']:
-        embed = discord.Embed(description = 'Profile not found. Check for typos and try again.')
-        embed.set_author(name = stats['btag'],
-                         url = f'https://playoverwatch.com/en-us/career/pc/{stats["btag"].replace("#","-")}')
+        embed.description = 'Profile not found. Check for typos and try again.'
         return embed
 
+    embed.set_image(url = stats['image'])
+
     if not stats['public']:
-        embed = discord.Embed(description = f'{blank}\nThis profile is currently private and cannot be seen.')
-        embed.set_author(name = stats['btag'],
-                         url = f'https://playoverwatch.com/en-us/career/pc/{stats["btag"].replace("#","-")}')
-        embed.set_image(url = stats['image'])
+        embed.description = f'{blank}\nThis profile is currently private and cannot be seen.'
         return embed
 
     if not stats['comp']:
-        embed = discord.Embed(description = f'{blank}\nThis profile is public but has no competitive info.')
-        embed.set_author(name = stats['btag'],
-                         url = f'https://playoverwatch.com/en-us/career/pc/{stats["btag"].replace("#","-")}')
-        embed.set_image(url = stats['image'])
+        embed.description = f'{blank}\nThis profile is public but has no competitive info.'
         return embed
 
-    embed = discord.Embed(description = (f'{blank}\n{stats["games played"]} '
-                                          'competitive game(s) played '
-                                         f'({round(stats["games won"] / stats["games played"] * 100, 2)}% won) '
-                                         f'over {stats["time"]}\n{blank}'))
+    embed.description = (f'{blank}\n{stats["games played"]} competitive game(s) played '
+                         f'({round(stats["games won"] / stats["games played"] * 100, 2)}% won) '
+                         f'over {stats["time"]}\n{blank}')
 
     if stats['old']:
         embed.description += f'\n**This competitive info is from a previous season.**\n{blank}'
