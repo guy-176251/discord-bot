@@ -207,24 +207,19 @@ def the_stats(page: str) -> discord.Embed:
 
 if __name__ == '__main__':
     import os
-    import requests
-    from random_headers import get
+    from pprint import pprint
+    from testing.random_headers import get
     from discord import Webhook, RequestsWebhookAdapter
 
     btag = 'LZR#119553'
 
     webhook = Webhook.from_url(os.environ['OW_WEBHOOK'], adapter = RequestsWebhookAdapter())
 
-    #with open('BEER.html', 'r') as f:
-    #with open('Rorschach-11181.html', 'r') as f:
-    #with open('Cupnoodle.html', 'r') as f:
-        #page = f.read()
-
     page = get(f'https://playoverwatch.com/en-us/career/pc/{btag.replace("#","-")}').content
 
-    stats = scraper(page, btag)
+    stats = scraper(page)
 
-    with open('ow_scraping_results.json', 'w') as f:
-        json.dump(stats, f, indent=2)
+    with open('test/results.txt', 'w') as f:
+        pprint(stats, f, indent=2)
 
     webhook.send(embed = discord_stats(stats))

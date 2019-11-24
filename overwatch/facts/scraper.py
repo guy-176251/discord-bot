@@ -47,10 +47,10 @@ if __name__ == '__main__':
     from pprint import pprint
     from discord import Webhook, RequestsWebhookAdapter
 
-    with open('orisa.html', 'r') as IN:
+    with open('html/orisa.html', 'r') as IN:
         page = IN.read().replace('<br />', '\n')
 
-    with open('facts.txt', 'w') as OUT:
+    with open('html/facts.txt', 'w') as OUT:
         pprint(scraper(html.fromstring(page)), OUT)
 
     webhook = Webhook.from_url(os.environ['WEBHOOK_URL'], adapter = RequestsWebhookAdapter())
