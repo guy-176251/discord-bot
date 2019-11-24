@@ -23,7 +23,6 @@ def scraper(page: str) -> dict:
     if 'private profile' in find(doc, 'p.masthead-permission-level-text').text.lower():
         return {
             'found' : True,
-            'public': False,
             'image' : profile_pic,
             'btag'  : btag
         }
@@ -34,7 +33,6 @@ def scraper(page: str) -> dict:
         return {
             'found' : True,
             'public': True,
-            'comp'  : False,
             'btag'  : btag,
             'image' : profile_pic
         }
@@ -116,6 +114,12 @@ def scraper(page: str) -> dict:
     }
 
 def graph(stats: dict) -> str:
+    '''
+    time percent
+    win percent
+    time
+    win
+    '''
     sorted_stats = sorted(stats.keys(),
                           key = lambda cat: stats[cat]['time percent'],
                           reverse = True)[:5]
@@ -149,8 +153,9 @@ def discord_stats(page_or_stats) -> discord.Embed:
     else:   stats = page_or_stats
 
     embed = discord.Embed()
-    embed.set_author(name = stats['btag'],
-                     url = f'https://playoverwatch.com/en-us/career/pc/{stats["btag"].replace("#","-")}')
+    embed.set_author(name     = stats['btag'],
+                     icon_url = stats.get('highest', ''),
+                     url      = f'https://playoverwatch.com/en-us/career/pc/{stats["btag"].replace("#","-")}')
 
     if not stats['found']:
         embed.description = 'Profile not found. Check for typos and try again.'
@@ -158,11 +163,11 @@ def discord_stats(page_or_stats) -> discord.Embed:
 
     embed.set_image(url = stats['image'])
 
-    if not stats['public']:
+    if not stats.get('public', False):
         embed.description = f'{blank}\nThis profile is currently private and cannot be seen.'
         return embed
 
-    if not stats['comp']:
+    if not stats.get('comp', False):
         embed.description = f'{blank}\nThis profile is public but has no competitive info.'
         return embed
 
@@ -173,20 +178,14 @@ def discord_stats(page_or_stats) -> discord.Embed:
     if stats['old']:
         embed.description += f'\n**This competitive info is from a previous season.**\n{blank}'
 
-    embed.set_author(name = stats['btag'],
-                     icon_url = stats['highest'],
-                     url = f'https://playoverwatch.com/en-us/career/pc/{stats["btag"].replace("#","-")}')
-
-    embed.set_image(url = stats['image'])
-
-    SRs = '\n'.join(f'**{r}**: {stats["roles"][r]["sr"]}' for r in stats['roles'])
-
-    embed.add_field(name = '__All Roles__',
-                    value = f'{SRs}\n```ml\n{graph(stats["roles"])}```\n{blank}')
-
     sorted_roles = sorted(stats['roles'].keys(),
                           key = lambda r: stats['roles'][r]['time percent'],
                           reverse = True)
+
+    SRs = '\n'.join(f'{r + ":": <8} {stats["roles"][r]["sr"]}' for r in sorted_roles)
+
+    embed.add_field(name = '__All Roles__',
+                    value = f'```ml\n{SRs if not stats["old"] else ""}\n{graph(stats["roles"])}```\n{blank}')
 
     for role in sorted_roles:
         embed.add_field(name = f'__{role}__',
@@ -215,7 +214,7 @@ if __name__ == '__main__':
 
     btag = 'LZR#119553'
 
-    webhook = Webhook.from_url(os.environ['OW_WEBHOOK'], adapter = RequestsWebhookAdapter())
+    webhook = Webhook.from_url(os.environ['TEST_WEBHOOK'], adapter = RequestsWebhookAdapter())
 
     page = get(f'https://playoverwatch.com/en-us/career/pc/{btag.replace("#","-")}').content
 

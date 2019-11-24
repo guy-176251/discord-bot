@@ -53,5 +53,5 @@ if __name__ == '__main__':
     with open('html/facts.txt', 'w') as OUT:
         pprint(scraper(html.fromstring(page)), OUT)
 
-    webhook = Webhook.from_url(os.environ['WEBHOOK_URL'], adapter = RequestsWebhookAdapter())
+    webhook = Webhook.from_url(os.environ['TEST_WEBHOOK'], adapter = RequestsWebhookAdapter())
     webhook.send(embeds = discord_embed(page))
