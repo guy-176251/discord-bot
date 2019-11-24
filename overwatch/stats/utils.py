@@ -1,4 +1,3 @@
-btag       = 'a.button.m-white-outline.m-sm.is-active'
 name       = '[class$=title]'
 value      = '[class$=description]'
 percent    = 'data-overwatch-progress-percent'

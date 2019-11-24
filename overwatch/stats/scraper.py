@@ -207,9 +207,8 @@ def the_stats(page: str) -> discord.Embed:
 
 if __name__ == '__main__':
     import os
-    import discord
     import requests
-    from scraper import get
+    from random_headers import get
     from discord import Webhook, RequestsWebhookAdapter
 
     btag = 'LZR#119553'
