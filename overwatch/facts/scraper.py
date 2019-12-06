@@ -1,4 +1,3 @@
-import json
 import discord
 from lxml import html
 
@@ -24,9 +23,6 @@ def discord_embed(page: str, search_term: str) -> list:
     name, facts = scraper(html.fromstring(page.replace('<br />', '\n')), search_term)
     embeds = [discord.Embed(title = name)]
     blank = '󠀀'
-
-    with open('result.json', 'w') as f:
-        json.dump(facts, f)
 
     for abl in facts:
 
