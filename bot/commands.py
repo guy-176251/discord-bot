@@ -83,7 +83,7 @@ async def facts(ctx: Context, *args):
 
             if not embeds:
                 await ctx.send(embed=discord.Embed(title = args[0].title(),
-                                                   description = f'No results found for search term `{args[1]}`.'))
+                                                   description = f'No results found for search term `{search_term}`.'))
                 return
 
             for e in embeds:

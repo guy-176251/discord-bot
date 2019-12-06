@@ -182,10 +182,14 @@ def discord_stats(page_or_stats) -> discord.Embed:
                           key = lambda r: stats['roles'][r]['time percent'],
                           reverse = True)
 
-    SRs = '\n'.join(f'{r + ":": <8} {stats["roles"][r]["sr"]}' for r in sorted_roles)
+    role_len = max(len(r) for r in stats['roles'])
+    SRs = '\n '.join((f'{r + ":": <{role_len+1}} '
+                      f'{stats["roles"][r]["sr"]} '
+                      f'{"SR" if type(stats["roles"][r]["sr"]) == int else ""}')
+                     for r in sorted_roles)
 
     embed.add_field(name = '__All Roles__',
-                    value = f'```ml\n{SRs if not stats["old"] else ""}\n{graph(stats["roles"])}```\n{blank}')
+                    value = f'```ml\n {SRs if not stats["old"] else ""}\n{graph(stats["roles"])}```\n{blank}')
 
     for role in sorted_roles:
         embed.add_field(name = f'__{role}__',
@@ -201,7 +205,7 @@ def discord_stats(page_or_stats) -> discord.Embed:
 
     return embed
 
-# **{stats['roles'][role]['sr']}{' SR' if type(stats['roles'][role]['sr']) == int else ''}**
+# **{stats["roles"][role]["sr"]}{" SR" if type(stats["roles"][role]["sr"]) == int else ""}**
 
 def the_stats(page: str) -> discord.Embed:
     return discord_stats(page)

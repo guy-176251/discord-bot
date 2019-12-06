@@ -1,3 +1,4 @@
+import json
 import discord
 from lxml import html
 
@@ -13,7 +14,7 @@ def scraper(doc: html.HtmlElement, search_term: str) -> tuple:
                    for td in tr.cssselect('td'))
              for tr in find(abl, 'table.infoboxtable')[0]]
 
-        for abl in find(doc, 'div.mw-parser-output').cssselect('div.ability_details')
+        for abl in doc.cssselect('div.mw-parser-output')[-1].cssselect('div.ability_details')
         if any(search_term in s for s in [find(abl, 'span.mw-headline').text.lower(),
                                           find(abl, 'p').text.lower()])
     }
@@ -23,6 +24,9 @@ def discord_embed(page: str, search_term: str) -> list:
     name, facts = scraper(html.fromstring(page.replace('<br />', '\n')), search_term)
     embeds = [discord.Embed(title = name)]
     blank = '󠀀'
+
+    with open('result.json', 'w') as f:
+        json.dump(facts, f)
 
     for abl in facts:
 
